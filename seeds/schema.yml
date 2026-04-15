@@ -1,0 +1,21 @@
+version: 2
+
+seeds:
+  - name: matches_19302010
+    description: "Historical World Cup matches from 1930 to 2010"
+    config:
+      delimiter: ","
+
+  - name: world_cup_matches_2014
+    description: "World Cup 2014 match details"
+    config:
+      delimiter: ";"
+      column_types:
+        Year: integer
+        Home Team Goals: integer
+        Away Team Goals: integer
+        Attendance: double
+        Half-time Home Goals: integer
+        Half-time Away Goals: integer
+        RoundID: integer
+        MatchID: integer

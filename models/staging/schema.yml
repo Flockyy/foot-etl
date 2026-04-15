@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_stadiums
+    description: "2018 World Cup stadiums (from data_2018.json)"
+
+  - name: stg_teams
+    description: "2018 World Cup teams (from data_2018.json)"
+
+  - name: stg_tv_channels
+    description: "TV channels broadcasting the 2018 World Cup. 'lang' flattened from list to string."
+
+  - name: stg_matches
+    description: "Historical World Cup matches 1930–2010, cleaned."
+    columns:
+      - name: team1
+        description: "Team name without native-language translation"
+      - name: team2
+        description: "Team name without native-language translation"
+      - name: venue
+        description: "City, trailing dot removed"
+      - name: full_time_score
+        description: "Full-time score, e.g. '4-1'"
+      - name: half_time_score
+        description: "Half-time score, e.g. '3-0'"
+
+  - name: stg_world_cup_matches
+    description: "2014 World Cup matches, deduplicated and cleaned."
+    columns:
+      - name: match_datetime
+        description: "Parsed TIMESTAMP from 'Datetime' column"
+      - name: attendance
+        description: "Attendance with missing values filled by median"

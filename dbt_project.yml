@@ -1,0 +1,22 @@
+name: foot_etl
+version: "1.0.0"
+profile: foot_etl
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  foot_etl:
+    staging:
+      +materialized: table
+
+seeds:
+  foot_etl:
+    +column_types:
+      year: integer
