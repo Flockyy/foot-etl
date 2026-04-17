@@ -13,3 +13,21 @@ dependencies = [
     "pandas>=3.0.2",
     "seaborn>=0.13.2",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=tests --cov-report=term-missing --cov-report=html:htmlcov"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["tests"]
+omit = []
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
